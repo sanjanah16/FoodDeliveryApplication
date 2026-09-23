@@ -1,0 +1,1061 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Food Delivery - Home</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* SEARCH MESSAGE */
+
+        #searchMessage {
+
+            text-align: center;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            margin: 20px 0;
+
+            min-height: 25px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION BAR
+========================== -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🍴 Foodie
+    </div>
+
+    <div class="nav-links">
+
+        <a href="home.html">Home</a>
+
+        <a href="profile">Profile</a>
+
+        <!-- CART GOES TO CART SERVLET -->
+        <a href="cart">Cart</a>
+
+      <a href="orderHistory">Orders</a>
+
+        <a href="logout">Logout</a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO SECTION
+========================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="hero-small-text">
+            🍽️ Delicious food delivered to your doorstep
+        </p>
+
+        <h1>
+            Order Food.<br>
+            <span>Enjoy Happiness.</span>
+        </h1>
+
+        <p class="hero-description">
+            Discover the best restaurants around you and
+            order your favourite meals anytime.
+        </p>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="restaurantSearch"
+                placeholder="Search for restaurants..."
+            >
+
+            <button onclick="searchRestaurant()">
+                🔍 Search
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MAIN CONTENT
+========================== -->
+
+<main class="container">
+
+
+    <!-- =========================
+         CATEGORY SECTION
+    ========================== -->
+
+    <section>
+
+        <h2 class="section-title">
+            Explore Categories
+        </h2>
+
+        <p class="section-subtitle">
+            What are you craving today?
+        </p>
+
+
+        <div class="categories">
+
+
+            <div class="category pizza">
+
+                <img src="images/pizza.jpg" alt="Pizza">
+
+                <h3>Pizza</h3>
+
+                <p>Cheesy & Delicious</p>
+
+            </div>
+
+
+            <div class="category burger">
+
+                <img src="images/burger.jpg" alt="Burger">
+
+                <h3>Burger</h3>
+
+                <p>Juicy & Tasty</p>
+
+            </div>
+
+
+            <div class="category biryani">
+
+                <img src="images/biryani.jpg" alt="Biryani">
+
+                <h3>Biryani</h3>
+
+                <p>Rich & Spicy</p>
+
+            </div>
+
+
+            <div class="category chinese">
+
+                <img src="images/chinese.jpg" alt="Chinese">
+
+                <h3>Chinese</h3>
+
+                <p>Hot & Delicious</p>
+
+            </div>
+
+
+            <div class="category dessert">
+
+                <img src="images/dessert.jpg" alt="Desserts">
+
+                <h3>Desserts</h3>
+
+                <p>Sweet Happiness</p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         RESTAURANT SECTION
+    ========================== -->
+
+    <section class="restaurant-section">
+
+        <h2 class="section-title">
+            Popular Restaurants
+        </h2>
+
+        <p class="section-subtitle">
+            Delicious food from your favourite restaurants
+        </p>
+
+
+        <!-- SEARCH MESSAGE -->
+
+        <p id="searchMessage"></p>
+
+
+        <div class="restaurants" id="restaurantList">
+
+
+            <!-- =========================
+                 RESTAURANT 1
+            ========================== -->
+
+            <div class="card">
+
+                <div class="restaurant-image pizza-image">
+
+                    <img
+                        src="images/pizza-palace.jpg"
+                        alt="Pizza Palace"
+                    >
+
+                    <div class="popular-badge">
+                        🔥 Popular
+                    </div>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="card-title-row">
+
+                        <h2>Pizza Palace</h2>
+
+                        <span class="rating">
+                            ⭐ 4.5
+                        </span>
+
+                    </div>
+
+
+                    <p class="cuisine">
+                        🇮🇹 Italian • Pizza • Fast Food
+                    </p>
+
+
+                    <p class="delivery">
+                        🚴 30 Minutes Delivery
+                    </p>
+
+
+                    <div class="card-footer">
+
+                        <span class="price">
+                            ₹200 - ₹500
+                        </span>
+
+                        <a
+                            href="restaurants?restaurantId=2"
+                            class="btn"
+                        >
+                            View Restaurant →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 RESTAURANT 2
+            ========================== -->
+
+            <div class="card">
+
+                <div class="restaurant-image udupi-image">
+
+                    <img
+                        src="images/udupi-kitchen.jpg"
+                        alt="Udupi Kitchen"
+                    >
+
+                    <div class="popular-badge">
+                        ⭐ Top Rated
+                    </div>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="card-title-row">
+
+                        <h2>Udupi Kitchen</h2>
+
+                        <span class="rating">
+                            ⭐ 4.3
+                        </span>
+
+                    </div>
+
+
+                    <p class="cuisine">
+                        🌴 South Indian • Dosa • Meals
+                    </p>
+
+
+                    <p class="delivery">
+                        🚴 25 Minutes Delivery
+                    </p>
+
+
+                    <div class="card-footer">
+
+                        <span class="price">
+                            ₹100 - ₹300
+                        </span>
+
+                        <a
+                            href="restaurants?restaurantId=4"
+                            class="btn"
+                        >
+                            View Restaurant →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 RESTAURANT 3
+            ========================== -->
+
+            <div class="card">
+
+                <div class="restaurant-image chinese-image">
+
+                    <img
+                        src="images/chinese-wok.jpg"
+                        alt="Chinese Wok"
+                    >
+
+                    <div class="popular-badge">
+                        🥢 Trending
+                    </div>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="card-title-row">
+
+                        <h2>Chinese Wok</h2>
+
+                        <span class="rating">
+                            ⭐ 4.2
+                        </span>
+
+                    </div>
+
+
+                    <p class="cuisine">
+                        🥢 Chinese • Noodles • Manchurian
+                    </p>
+
+
+                    <p class="delivery">
+                        🚴 35 Minutes Delivery
+                    </p>
+
+
+                    <div class="card-footer">
+
+                        <span class="price">
+                            ₹150 - ₹400
+                        </span>
+
+                        <a
+                            href="restaurants?restaurantId=5"
+                            class="btn"
+                        >
+                            View Restaurant →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 RESTAURANT 4 - SPICE GARDEN
+            ========================== -->
+
+            <div class="card">
+
+                <div class="restaurant-image">
+
+                    <img
+                        src="images/spice-garden.jpg"
+                        alt="Spice Garden"
+                    >
+
+                    <div class="popular-badge">
+                        🔥 Popular
+                    </div>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="card-title-row">
+
+                        <h2>Spice Garden</h2>
+
+                        <span class="rating">
+                            ⭐ 4.4
+                        </span>
+
+                    </div>
+
+
+                    <p class="cuisine">
+                        🌶️ North Indian • Biryani • Kebabs
+                    </p>
+
+
+                    <p class="delivery">
+                        🚴 28 Minutes Delivery
+                    </p>
+
+
+                    <div class="card-footer">
+
+                        <span class="price">
+                            ₹180 - ₹450
+                        </span>
+
+                        <a
+                            href="restaurants?restaurantId=40"
+                            class="btn"
+                        >
+                            View Restaurant →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 RESTAURANT 5 - BURGER HUB
+            ========================== -->
+
+            <div class="card">
+
+                <div class="restaurant-image">
+
+                    <img
+                        src="images/burger-hub.jpg"
+                        alt="Burger Hub"
+                    >
+
+                    <div class="popular-badge">
+                        🍔 Trending
+                    </div>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="card-title-row">
+
+                        <h2>Burger Hub</h2>
+
+                        <span class="rating">
+                            ⭐ 4.3
+                        </span>
+
+                    </div>
+
+
+                    <p class="cuisine">
+                        🍔 Burgers • Fast Food • Beverages
+                    </p>
+
+
+                    <p class="delivery">
+                        🚴 20 Minutes Delivery
+                    </p>
+
+
+                    <div class="card-footer">
+
+                        <span class="price">
+                            ₹120 - ₹350
+                        </span>
+
+                        <a
+                            href="restaurants?restaurantId=41"
+                            class="btn"
+                        >
+                            View Restaurant →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 RESTAURANT 6 - ROYAL BIRYANI
+            ========================== -->
+
+            <div class="card">
+
+                <div class="restaurant-image">
+
+                    <img
+                        src="images/royal-biryani.jpg"
+                        alt="Royal Biryani"
+                    >
+
+                    <div class="popular-badge">
+                        👑 Best Seller
+                    </div>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="card-title-row">
+
+                        <h2>Royal Biryani</h2>
+
+                        <span class="rating">
+                            ⭐ 4.6
+                        </span>
+
+                    </div>
+
+
+                    <p class="cuisine">
+                        🍛 Biryani • Mughlai • Kebabs
+                    </p>
+
+
+                    <p class="delivery">
+                        🚴 35 Minutes Delivery
+                    </p>
+
+
+                    <div class="card-footer">
+
+                        <span class="price">
+                            ₹200 - ₹500
+                        </span>
+
+                        <a
+                            href="restaurants?restaurantId=42"
+                            class="btn"
+                        >
+                            View Restaurant →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 RESTAURANT 7 - ASIAN TREAT
+            ========================== -->
+
+            <div class="card">
+
+                <div class="restaurant-image">
+
+                    <img
+                        src="images/asian-treat.jpg"
+                        alt="Asian Treat"
+                    >
+
+                    <div class="popular-badge">
+                        🥢 Trending
+                    </div>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="card-title-row">
+
+                        <h2>Asian Treat</h2>
+
+                        <span class="rating">
+                            ⭐ 4.2
+                        </span>
+
+                    </div>
+
+
+                    <p class="cuisine">
+                        🥢 Chinese • Thai • Noodles
+                    </p>
+
+
+                    <p class="delivery">
+                        🚴 30 Minutes Delivery
+                    </p>
+
+
+                    <div class="card-footer">
+
+                        <span class="price">
+                            ₹150 - ₹400
+                        </span>
+
+                        <a
+                            href="restaurants?restaurantId=43"
+                            class="btn"
+                        >
+                            View Restaurant →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 RESTAURANT 8 - SWEET HEAVEN
+            ========================== -->
+
+            <div class="card">
+
+                <div class="restaurant-image">
+
+                    <img
+                        src="images/sweet-heaven.jpg"
+                        alt="Sweet Heaven"
+                    >
+
+                    <div class="popular-badge">
+                        🍰 Sweet Pick
+                    </div>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="card-title-row">
+
+                        <h2>Sweet Heaven</h2>
+
+                        <span class="rating">
+                            ⭐ 4.5
+                        </span>
+
+                    </div>
+
+
+                    <p class="cuisine">
+                        🍰 Desserts • Cakes • Ice Cream
+                    </p>
+
+
+                    <p class="delivery">
+                        🚴 20 Minutes Delivery
+                    </p>
+
+
+                    <div class="card-footer">
+
+                        <span class="price">
+                            ₹100 - ₹300
+                        </span>
+
+                        <a
+                            href="restaurants?restaurantId=44"
+                            class="btn"
+                        >
+                            View Restaurant →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 RESTAURANT 9 - TANDOORI TALES
+            ========================== -->
+
+            <div class="card">
+
+                <div class="restaurant-image">
+
+                    <img
+                        src="images/tandoori-tales.jpg"
+                        alt="Tandoori Tales"
+                    >
+
+                    <div class="popular-badge">
+                        🔥 Popular
+                    </div>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="card-title-row">
+
+                        <h2>Tandoori Tales</h2>
+
+                        <span class="rating">
+                            ⭐ 4.5
+                        </span>
+
+                    </div>
+
+
+                    <p class="cuisine">
+                        🔥 North Indian • Tandoori • Kebabs
+                    </p>
+
+
+                    <p class="delivery">
+                        🚴 30 Minutes Delivery
+                    </p>
+
+
+                    <div class="card-footer">
+
+                        <span class="price">
+                            ₹180 - ₹450
+                        </span>
+
+                        <a
+                            href="restaurants?restaurantId=45"
+                            class="btn"
+                        >
+                            View Restaurant →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         WHY CHOOSE US
+    ========================== -->
+
+    <section class="why-section">
+
+        <h2 class="section-title">
+            Why Choose Foodie?
+        </h2>
+
+        <p class="section-subtitle">
+            We make your food ordering experience simple and enjoyable.
+        </p>
+
+
+        <div class="features">
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🚀
+                </div>
+
+                <h3>Fast Delivery</h3>
+
+                <p>
+                    Get your favourite food delivered
+                    quickly to your doorstep.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🍽️
+                </div>
+
+                <h3>Best Restaurants</h3>
+
+                <p>
+                    Choose from a variety of restaurants
+                    and delicious cuisines.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🔒
+                </div>
+
+                <h3>Secure Payment</h3>
+
+                <p>
+                    Enjoy a simple and secure
+                    payment experience.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    ❤️
+                </div>
+
+                <h3>Made With Love</h3>
+
+                <p>
+                    Your satisfaction is our
+                    top priority.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <div class="footer-content">
+
+
+        <div>
+
+            <h2>🍴 Foodie</h2>
+
+            <p>
+                Delicious food delivered with love.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <a href="home.html">Home</a>
+
+            <!-- CART GOES TO CART SERVLET -->
+            <a href="cart">Cart</a>
+
+            <a href="order-history.html">Orders</a>
+
+        </div>
+
+
+        <div>
+
+            <h3>Contact</h3>
+
+            <p>📧 support@foodie.com</p>
+
+            <p>📞 +91 98765 43210</p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        <p>
+            © 2026 Foodie | Food Delivery Application
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================
+     RESTAURANT SEARCH
+========================== -->
+
+<script>
+
+    function searchRestaurant() {
+
+        let searchText =
+            document.getElementById("restaurantSearch")
+            .value
+            .trim()
+            .toLowerCase();
+
+        let cards =
+            document.querySelectorAll(".restaurants .card");
+
+        let message =
+            document.getElementById("searchMessage");
+
+
+        /* Empty Search */
+
+        if (searchText === "") {
+
+            cards.forEach(function(card) {
+
+                card.style.display = "block";
+
+            });
+
+            message.innerHTML = "";
+
+            return;
+        }
+
+
+        let found = false;
+
+
+        /* Check Every Restaurant */
+
+        cards.forEach(function(card) {
+
+            let restaurantName =
+                card.querySelector(".card-title-row h2")
+                .innerText
+                .trim()
+                .toLowerCase();
+
+
+            /* Exact Match */
+
+            if (restaurantName === searchText) {
+
+                card.style.display = "block";
+
+                found = true;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+
+        /* Result Message */
+
+        if (found) {
+
+            message.innerHTML =
+                "🍽️ Restaurant found!";
+
+            message.style.color = "green";
+
+        } else {
+
+            message.innerHTML =
+                "❌ Restaurant not found. Please try another restaurant.";
+
+            message.style.color = "#ff512f";
+
+        }
+
+    }
+
+
+    /* Search when ENTER key is pressed */
+
+    document
+        .getElementById("restaurantSearch")
+        .addEventListener("keypress", function(event) {
+
+            if (event.key === "Enter") {
+
+                searchRestaurant();
+
+            }
+
+        });
+
+</script>
+
+
+</body>
+
+</html>
+
