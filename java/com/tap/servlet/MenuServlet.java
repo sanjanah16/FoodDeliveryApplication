@@ -890,7 +890,7 @@ public class MenuServlet extends HttpServlet {
             /* Asian Treat */
 
             case "Veg Pad Thai":
-                return "veg-pad-thai.jpg";
+                return "images/veg-pad-thai.jpg";
 
             case "Thai Green Curry":
                 return "images/thai-green-curry.jpg";
