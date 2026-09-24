@@ -2,7 +2,6 @@ package com.tap.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 import com.tap.DAO.RestaurantDAO;
 import com.tap.DAOImpl.RestaurantDAOImpl;
@@ -31,20 +30,19 @@ public class RestaurantServlet extends HttpServlet {
                          HttpServletResponse response)
             throws ServletException, IOException {
 
-        String restaurantId = request.getParameter("restaurantId");
+        String restaurantId =
+                request.getParameter("restaurantId");
 
         response.setContentType("text/html;charset=UTF-8");
 
-        PrintWriter out = response.getWriter();
+        PrintWriter out =
+                response.getWriter();
 
         out.println("<!DOCTYPE html>");
         out.println("<html>");
         out.println("<head>");
 
-        out.println("<meta charset='UTF-8'>");
-        out.println("<meta name='viewport' content='width=device-width, initial-scale=1.0'>");
-
-        out.println("<title>Restaurants - Foodie</title>");
+        out.println("<title>Restaurant Details</title>");
 
         out.println("<style>");
 
@@ -64,139 +62,22 @@ public class RestaurantServlet extends HttpServlet {
         out.println("}");
 
         /* =========================
-           NAVBAR
-        ========================= */
-
-        out.println(".navbar {");
-        out.println("display: flex;");
-        out.println("justify-content: space-between;");
-        out.println("align-items: center;");
-        out.println("padding: 18px 50px;");
-        out.println("background: linear-gradient(90deg, #ff512f, #ff416c, #8e44ad);");
-        out.println("color: white;");
-        out.println("}");
-
-        out.println(".logo {");
-        out.println("font-size: 28px;");
-        out.println("font-weight: bold;");
-        out.println("}");
-
-        out.println(".nav-links {");
-        out.println("display: flex;");
-        out.println("gap: 25px;");
-        out.println("}");
-
-        out.println(".nav-links a {");
-        out.println("color: white;");
-        out.println("text-decoration: none;");
-        out.println("font-size: 16px;");
-        out.println("font-weight: bold;");
-        out.println("}");
-
-        out.println(".nav-links a:hover {");
-        out.println("text-decoration: underline;");
-        out.println("}");
-
-        /* =========================
-           PAGE HEADER
-        ========================= */
-
-        out.println(".page-header {");
-        out.println("text-align: center;");
-        out.println("padding: 45px 20px 25px;");
-        out.println("}");
-
-        out.println(".page-header h1 {");
-        out.println("font-size: 38px;");
-        out.println("margin: 0 0 10px;");
-        out.println("color: #333;");
-        out.println("}");
-
-        out.println(".page-header p {");
-        out.println("font-size: 17px;");
-        out.println("color: #777;");
-        out.println("margin: 0;");
-        out.println("}");
-
-        /* =========================
-           RESTAURANT LIST
-        ========================= */
-
-        out.println(".restaurant-container {");
-        out.println("width: 90%;");
-        out.println("max-width: 1100px;");
-        out.println("margin: 20px auto 50px;");
-        out.println("display: grid;");
-        out.println("grid-template-columns: repeat(3, 1fr);");
-        out.println("gap: 25px;");
-        out.println("}");
-
-        /* =========================
-           RESTAURANT ITEM
-        ========================= */
-
-        out.println(".restaurant-item {");
-        out.println("background: white;");
-        out.println("border-radius: 20px;");
-        out.println("padding: 25px;");
-        out.println("box-shadow: 0 10px 30px rgba(0,0,0,0.10);");
-        out.println("transition: 0.3s;");
-        out.println("}");
-
-        out.println(".restaurant-item:hover {");
-        out.println("transform: translateY(-7px);");
-        out.println("box-shadow: 0 15px 35px rgba(255,65,108,0.18);");
-        out.println("}");
-
-        out.println(".restaurant-item h2 {");
-        out.println("margin: 0 0 10px;");
-        out.println("font-size: 24px;");
-        out.println("color: #ff416c;");
-        out.println("}");
-
-        out.println(".restaurant-item p {");
-        out.println("margin: 8px 0;");
-        out.println("font-size: 15px;");
-        out.println("color: #555;");
-        out.println("}");
-
-        out.println(".restaurant-item strong {");
-        out.println("color: #333;");
-        out.println("}");
-
-        /* =========================
-           VIEW RESTAURANT BUTTON
-        ========================= */
-
-        out.println(".view-button {");
-        out.println("display: inline-block;");
-        out.println("margin-top: 15px;");
-        out.println("padding: 12px 22px;");
-        out.println("border-radius: 25px;");
-        out.println("background: linear-gradient(90deg, #ff512f, #ff416c);");
-        out.println("color: white;");
-        out.println("text-decoration: none;");
-        out.println("font-weight: bold;");
-        out.println("transition: 0.3s;");
-        out.println("}");
-
-        out.println(".view-button:hover {");
-        out.println("transform: scale(1.05);");
-        out.println("}");
-
-        /* =========================
-           RESTAURANT DETAILS
+           RESTAURANT CARD
         ========================= */
 
         out.println(".restaurant-card {");
         out.println("width: 90%;");
         out.println("max-width: 850px;");
-        out.println("margin: 50px auto;");
+        out.println("margin: 60px auto;");
         out.println("background: white;");
         out.println("border-radius: 25px;");
         out.println("overflow: hidden;");
         out.println("box-shadow: 0 15px 40px rgba(0,0,0,0.12);");
         out.println("}");
+
+        /* =========================
+           HEADER
+        ========================= */
 
         out.println(".restaurant-header {");
         out.println("padding: 40px;");
@@ -260,7 +141,7 @@ public class RestaurantServlet extends HttpServlet {
         out.println("}");
 
         /* =========================
-           MENU BUTTON
+           VIEW MENU BUTTON
         ========================= */
 
         out.println(".menu-button {");
@@ -281,15 +162,16 @@ public class RestaurantServlet extends HttpServlet {
 
         out.println(".menu-button:hover {");
         out.println("transform: translateY(-3px) scale(1.03);");
+        out.println("box-shadow: 0 12px 25px rgba(255,65,108,0.4);");
         out.println("}");
 
         /* =========================
-           BACK HOME
+           BACK TO HOME
         ========================= */
 
         out.println(".back-home {");
         out.println("text-align: center;");
-        out.println("margin: 30px 0 40px;");
+        out.println("margin-bottom: 40px;");
         out.println("}");
 
         out.println(".back-home a {");
@@ -306,34 +188,7 @@ public class RestaurantServlet extends HttpServlet {
            MOBILE
         ========================= */
 
-        out.println("@media (max-width: 850px) {");
-
-        out.println(".restaurant-container {");
-        out.println("grid-template-columns: repeat(2, 1fr);");
-        out.println("}");
-
-        out.println(".navbar {");
-        out.println("padding: 15px 25px;");
-        out.println("}");
-
-        out.println("}");
-
-        out.println("@media (max-width: 600px) {");
-
-        out.println(".restaurant-container {");
-        out.println("grid-template-columns: 1fr;");
-        out.println("}");
-
-        out.println(".navbar {");
-        out.println("flex-direction: column;");
-        out.println("gap: 15px;");
-        out.println("}");
-
-        out.println(".nav-links {");
-        out.println("gap: 12px;");
-        out.println("flex-wrap: wrap;");
-        out.println("justify-content: center;");
-        out.println("}");
+        out.println("@media (max-width: 650px) {");
 
         out.println(".restaurant-info {");
         out.println("grid-template-columns: 1fr;");
@@ -342,6 +197,11 @@ public class RestaurantServlet extends HttpServlet {
 
         out.println(".restaurant-header h1 {");
         out.println("font-size: 30px;");
+        out.println("}");
+
+        out.println(".restaurant-card {");
+        out.println("width: 94%;");
+        out.println("margin: 30px auto;");
         out.println("}");
 
         out.println("}");
@@ -353,256 +213,158 @@ public class RestaurantServlet extends HttpServlet {
         out.println("<body>");
 
         /* =========================
-           NAVBAR
+           GET RESTAURANT
         ========================= */
 
-        out.println("<nav class='navbar'>");
+        if (restaurantId != null) {
 
-        out.println("<div class='logo'>🍴 Foodie</div>");
+            int id = Integer.parseInt(restaurantId);
 
-        out.println("<div class='nav-links'>");
+            Restaurant restaurant =
+                    restaurantDAO.getRestaurant(id);
 
-        out.println("<a href='home.html'>Home</a>");
+            if (restaurant != null) {
 
-        out.println("<a href='restaurants'>Restaurants</a>");
+                /* =========================
+                   RESTAURANT HEADER
+                ========================= */
 
-        out.println("<a href='profile'>Profile</a>");
+                out.println("<div class='restaurant-card'>");
 
-        out.println("<a href='cart'>Cart</a>");
+                out.println("<div class='restaurant-header'>");
 
-        out.println("<a href='orderHistory'>Orders</a>");
+                out.println("<h1>"
+                        + restaurant.getName()
+                        + "</h1>");
 
-        out.println("<a href='logout'>Logout</a>");
+                out.println("<p>🍽️ "
+                        + restaurant.getCuisineType()
+                        + "</p>");
 
-        out.println("</div>");
+                out.println("</div>");
 
-        out.println("</nav>");
+                /* =========================
+                   RESTAURANT INFORMATION
+                ========================= */
 
-        /* =====================================================
-           IF RESTAURANT ID IS PROVIDED
-           SHOW SINGLE RESTAURANT DETAILS
-        ===================================================== */
+                out.println("<div class='restaurant-info'>");
 
-        if (restaurantId != null && !restaurantId.trim().isEmpty()) {
+                /* Cuisine */
 
-            try {
+                out.println("<div class='info-box'>");
 
-                int id = Integer.parseInt(restaurantId);
+                out.println("<span class='info-icon'>🍽️</span>");
 
-                Restaurant restaurant =
-                        restaurantDAO.getRestaurant(id);
+                out.println("<div>");
 
-                if (restaurant != null) {
+                out.println("<small>Cuisine</small>");
 
-                    out.println("<div class='restaurant-card'>");
+                out.println("<strong>"
+                        + restaurant.getCuisineType()
+                        + "</strong>");
 
-                    /* HEADER */
+                out.println("</div>");
 
-                    out.println("<div class='restaurant-header'>");
+                out.println("</div>");
 
-                    out.println("<h1>"
-                            + restaurant.getName()
-                            + "</h1>");
+                /* Delivery */
 
-                    out.println("<p>🍽️ "
-                            + restaurant.getCuisineType()
-                            + "</p>");
+                out.println("<div class='info-box'>");
 
-                    out.println("</div>");
+                out.println("<span class='info-icon'>🚴</span>");
 
-                    /* INFORMATION */
+                out.println("<div>");
 
-                    out.println("<div class='restaurant-info'>");
+                out.println("<small>Delivery Time</small>");
 
-                    /* Cuisine */
+                out.println("<strong>"
+                        + restaurant.getDeliveryTime()
+                        + " minutes</strong>");
 
-                    out.println("<div class='info-box'>");
+                out.println("</div>");
 
-                    out.println("<span class='info-icon'>🍽️</span>");
+                out.println("</div>");
 
-                    out.println("<div>");
+                /* Address */
 
-                    out.println("<small>Cuisine</small>");
+                out.println("<div class='info-box'>");
 
-                    out.println("<strong>"
-                            + restaurant.getCuisineType()
-                            + "</strong>");
+                out.println("<span class='info-icon'>📍</span>");
 
-                    out.println("</div>");
+                out.println("<div>");
 
-                    out.println("</div>");
+                out.println("<small>Address</small>");
 
-                    /* Delivery */
+                out.println("<strong>"
+                        + restaurant.getAddress()
+                        + "</strong>");
 
-                    out.println("<div class='info-box'>");
+                out.println("</div>");
 
-                    out.println("<span class='info-icon'>🚴</span>");
+                out.println("</div>");
 
-                    out.println("<div>");
+                /* Rating */
 
-                    out.println("<small>Delivery Time</small>");
+                out.println("<div class='info-box'>");
 
-                    out.println("<strong>"
-                            + restaurant.getDeliveryTime()
-                            + " minutes</strong>");
+                out.println("<span class='info-icon'>⭐</span>");
 
-                    out.println("</div>");
+                out.println("<div>");
 
-                    out.println("</div>");
+                out.println("<small>Rating</small>");
 
-                    /* Address */
+                out.println("<strong>"
+                        + restaurant.getRating()
+                        + " / 5</strong>");
 
-                    out.println("<div class='info-box'>");
+                out.println("</div>");
 
-                    out.println("<span class='info-icon'>📍</span>");
+                out.println("</div>");
 
-                    out.println("<div>");
+                /* Status */
 
-                    out.println("<small>Address</small>");
+                out.println("<div class='info-box'>");
 
-                    out.println("<strong>"
-                            + restaurant.getAddress()
-                            + "</strong>");
+                out.println("<span class='info-icon'>✅</span>");
 
-                    out.println("</div>");
+                out.println("<div>");
 
-                    out.println("</div>");
+                out.println("<small>Status</small>");
 
-                    /* Rating */
+                out.println("<strong>Active</strong>");
 
-                    out.println("<div class='info-box'>");
+                out.println("</div>");
 
-                    out.println("<span class='info-icon'>⭐</span>");
+                out.println("</div>");
 
-                    out.println("<div>");
+                out.println("</div>");
 
-                    out.println("<small>Rating</small>");
+                /* =========================
+                   VIEW MENU
+                ========================= */
 
-                    out.println("<strong>"
-                            + restaurant.getRating()
-                            + " / 5</strong>");
+                out.println("<a class='menu-button' href='menu?restaurantId="
+                        + restaurant.getRestaurantId()
+                        + "'>");
 
-                    out.println("</div>");
+                out.println("🍽️ View Menu →");
 
-                    out.println("</div>");
-
-                    /* Status */
-
-                    out.println("<div class='info-box'>");
-
-                    out.println("<span class='info-icon'>✅</span>");
-
-                    out.println("<div>");
-
-                    out.println("<small>Status</small>");
-
-                    out.println("<strong>Active</strong>");
-
-                    out.println("</div>");
-
-                    out.println("</div>");
-
-                    out.println("</div>");
-
-                    /* VIEW MENU */
-
-                    out.println("<a class='menu-button' href='menu?restaurantId="
-                            + restaurant.getRestaurantId()
-                            + "'>");
-
-                    out.println("🍽️ View Menu →");
-
-                    out.println("</a>");
-
-                    out.println("</div>");
-
-                } else {
-
-                    out.println("<h2 style='text-align:center; margin-top:50px;'>");
-
-                    out.println("Restaurant not found");
-
-                    out.println("</h2>");
-                }
-
-            } catch (NumberFormatException e) {
-
-                out.println("<h2 style='text-align:center; margin-top:50px;'>");
-
-                out.println("Invalid restaurant ID");
-
-                out.println("</h2>");
-            }
-
-        }
-
-        /* =====================================================
-           NO RESTAURANT ID
-           SHOW ALL RESTAURANTS
-        ===================================================== */
-
-        else {
-
-            out.println("<div class='page-header'>");
-
-            out.println("<h1>Popular Restaurants in Bengaluru</h1>");
-
-            out.println("<p>Explore restaurants and discover your favourite food</p>");
-
-            out.println("</div>");
-
-            List<Restaurant> restaurants =
-                    restaurantDAO.getAllRestaurants();
-
-            if (restaurants != null && !restaurants.isEmpty()) {
-
-                out.println("<div class='restaurant-container'>");
-
-                for (Restaurant restaurant : restaurants) {
-
-                    out.println("<div class='restaurant-item'>");
-
-                    out.println("<h2>"
-                            + restaurant.getName()
-                            + "</h2>");
-
-                    out.println("<p><strong>Cuisine:</strong> "
-                            + restaurant.getCuisineType()
-                            + "</p>");
-
-                    out.println("<p><strong>Delivery:</strong> "
-                            + restaurant.getDeliveryTime()
-                            + " minutes</p>");
-
-                    out.println("<p><strong>Rating:</strong> "
-                            + restaurant.getRating()
-                            + " / 5</p>");
-
-                    out.println("<p><strong>Address:</strong> "
-                            + restaurant.getAddress()
-                            + "</p>");
-
-                    out.println("<a class='view-button' href='restaurants?restaurantId="
-                            + restaurant.getRestaurantId()
-                            + "'>");
-
-                    out.println("View Restaurant →");
-
-                    out.println("</a>");
-
-                    out.println("</div>");
-                }
+                out.println("</a>");
 
                 out.println("</div>");
 
             } else {
 
-                out.println("<h2 style='text-align:center; margin-top:40px;'>");
-
-                out.println("No restaurants available");
-
+                out.println("<h2 style='text-align:center;'>");
+                out.println("Restaurant not found");
                 out.println("</h2>");
             }
+
+        } else {
+
+            out.println("<h2 style='text-align:center;'>");
+            out.println("Please select a restaurant");
+            out.println("</h2>");
         }
 
         /* =========================
@@ -612,9 +374,7 @@ public class RestaurantServlet extends HttpServlet {
         out.println("<div class='back-home'>");
 
         out.println("<a href='home.html'>");
-
         out.println("← Back to Home");
-
         out.println("</a>");
 
         out.println("</div>");
