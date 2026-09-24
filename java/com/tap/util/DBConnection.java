@@ -1,4 +1,3 @@
-
 package com.tap.util;
 
 import java.sql.Connection;
@@ -8,11 +7,11 @@ import java.sql.SQLException;
 public class DBConnection {
 
     private static final String URL =
-            "jdbc:mysql://localhost:3306/food_devivery_application";
+            "jdbc:mysql://fooddelivery-db-sanjanah2004-caec.h.aivencloud.com:21159/food_devivery_application?sslMode=REQUIRED";
 
-    private static final String USERNAME = "root";
+    private static final String USERNAME = "avnadmin";
 
-    private static final String PASSWORD = "Sanjana@1661";
+    private static final String PASSWORD = System.getenv("DB_PASSWORD");
 
     public static Connection getConnection() {
 
