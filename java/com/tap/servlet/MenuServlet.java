@@ -748,8 +748,8 @@ public class MenuServlet extends HttpServlet {
             case "Paneer Pizza":
                 return "images/paneer-pizza.jpg";
 
-            case "Veg Biryani":
-                return "images/veg-biryani.jpg";
+            // case "Veg Biryani":
+            //     return "images/veg-biryani.jpg";
 
             case "Burger":
                 return "images/burger.jpg";
@@ -757,8 +757,8 @@ public class MenuServlet extends HttpServlet {
             case "Noodles":
                 return "images/noodles.jpg";
 
-            case "Dosa":
-                return "images/dosa.jpg";
+            // case "Dosa":
+            //     return "images/dosa.jpg";
 
             case "Momos":
                 return "images/momos.jpg";
@@ -772,8 +772,8 @@ public class MenuServlet extends HttpServlet {
             case "Ice Cream":
                 return "images/ice-cream.jpg";
 
-            case "Tandoori":
-                return "images/tandoori.jpg";
+            // case "Tandoori":
+            //     return "images/tandoori.jpg";
 
             /* Udupi Kitchen */
 
