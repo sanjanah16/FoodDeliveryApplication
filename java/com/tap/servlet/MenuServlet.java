@@ -905,7 +905,7 @@ public class MenuServlet extends HttpServlet {
                 return "images/chicken-satay.jpg";
 
             case "Chicken Kung Pao":
-                return "chicken-kung-pao.jpg";
+                return "images/chicken-kung-pao.jpg";
 
             /* Sweet Heaven */
 
