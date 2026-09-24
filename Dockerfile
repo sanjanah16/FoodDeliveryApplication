@@ -6,6 +6,8 @@ COPY . /usr/local/tomcat/webapps/ROOT
 
 RUN mkdir -p /usr/local/tomcat/webapps/ROOT/WEB-INF/classes
 
+RUN cp /usr/local/tomcat/webapps/ROOT/mysql-connector-j-9.2.0.jar /usr/local/tomcat/lib/
+
 RUN find /usr/local/tomcat/webapps/ROOT/java -name "*.java" -print0 | \
     xargs -0 javac -cp "/usr/local/tomcat/lib/*" \
     -d /usr/local/tomcat/webapps/ROOT/WEB-INF/classes
