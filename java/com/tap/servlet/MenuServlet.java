@@ -890,7 +890,7 @@ public class MenuServlet extends HttpServlet {
             /* Asian Treat */
 
             case "Veg Pad Thai":
-                return "images/veg-pad-thai.jpg";
+                return "veg-pad-thai.jpg";
 
             case "Thai Green Curry":
                 return "images/thai-green-curry.jpg";
@@ -905,7 +905,7 @@ public class MenuServlet extends HttpServlet {
                 return "images/chicken-satay.jpg";
 
             case "Chicken Kung Pao":
-                return "images/chicken-kung-pao.jpg";
+                return "chicken-kung-pao.jpg";
 
             /* Sweet Heaven */
 
