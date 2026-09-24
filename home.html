@@ -42,6 +42,534 @@
                 Home
             </a>
 
+            <a href="home.html#restaurants">
+                Restaurants
+            </a>
+
+            <a href="profile">
+                Profile
+            </a>
+
+            <a href="cart">
+                Cart
+            </a>
+
+            <a href="orderHistory">
+                Orders
+            </a>
+
+            <a href="logout">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Delicious food, delivered to you
+            </h1>
+
+            <p>
+                Discover the best food and restaurants near you
+            </p>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search for restaurants..."
+                >
+
+                <button onclick="searchRestaurants()">
+                    Search
+                </button>
+
+            </div>
+
+            <div id="searchMessage"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CATEGORIES
+    ========================== -->
+
+    <section class="categories">
+
+        <h2>
+            Explore Categories
+        </h2>
+
+        <div class="category-container">
+
+            <div class="category-card">
+
+                <img
+                    src="images/pizza.jpg"
+                    alt="Pizza"
+                >
+
+                <h3>
+                    Pizza
+                </h3>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <img
+                    src="images/burger.jpg"
+                    alt="Burger"
+                >
+
+                <h3>
+                    Burger
+                </h3>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <img
+                    src="images/biryani.jpg"
+                    alt="Biryani"
+                >
+
+                <h3>
+                    Biryani
+                </h3>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <img
+                    src="images/chinese.jpg"
+                    alt="Chinese"
+                >
+
+                <h3>
+                    Chinese
+                </h3>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <img
+                    src="images/dessert.jpg"
+                    alt="Desserts"
+                >
+
+                <h3>
+                    Desserts
+                </h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         POPULAR RESTAURANTS
+    ========================== -->
+
+    <section class="restaurants" id="restaurants">
+
+        <h2>
+            Popular Restaurants in Bengaluru
+        </h2>
+
+        <p>
+            Delicious food from restaurants near you
+        </p>
+
+
+        <div class="restaurant-container">
+
+
+            <!-- PIZZA PALACE -->
+
+            <div class="restaurant-card">
+
+                <h3>
+                    Pizza Palace
+                </h3>
+
+                <p>
+                    Italian, Pizza
+                </p>
+
+                <a href="restaurants?restaurantId=2">
+                    View Restaurant
+                </a>
+
+            </div>
+
+
+            <!-- UDUPI KITCHEN -->
+
+            <div class="restaurant-card">
+
+                <h3>
+                    Udupi Kitchen
+                </h3>
+
+                <p>
+                    South Indian
+                </p>
+
+                <a href="restaurants?restaurantId=4">
+                    View Restaurant
+                </a>
+
+            </div>
+
+
+            <!-- CHINESE WOK -->
+
+            <div class="restaurant-card">
+
+                <h3>
+                    Chinese Wok
+                </h3>
+
+                <p>
+                    Chinese
+                </p>
+
+                <a href="restaurants?restaurantId=5">
+                    View Restaurant
+                </a>
+
+            </div>
+
+
+            <!-- SPICE GARDEN -->
+
+            <div class="restaurant-card">
+
+                <h3>
+                    Spice Garden
+                </h3>
+
+                <p>
+                    Indian
+                </p>
+
+                <a href="restaurants?restaurantId=40">
+                    View Restaurant
+                </a>
+
+            </div>
+
+
+            <!-- BURGER HUB -->
+
+            <div class="restaurant-card">
+
+                <h3>
+                    Burger Hub
+                </h3>
+
+                <p>
+                    Fast Food
+                </p>
+
+                <a href="restaurants?restaurantId=41">
+                    View Restaurant
+                </a>
+
+            </div>
+
+
+            <!-- ROYAL BIRYANI -->
+
+            <div class="restaurant-card">
+
+                <h3>
+                    Royal Biryani
+                </h3>
+
+                <p>
+                    Biryani, Indian
+                </p>
+
+                <a href="restaurants?restaurantId=42">
+                    View Restaurant
+                </a>
+
+            </div>
+
+
+            <!-- ASIAN TREAT -->
+
+            <div class="restaurant-card">
+
+                <h3>
+                    Asian Treat
+                </h3>
+
+                <p>
+                    Asian, Chinese
+                </p>
+
+                <a href="restaurants?restaurantId=43">
+                    View Restaurant
+                </a>
+
+            </div>
+
+
+            <!-- SWEET HEAVEN -->
+
+            <div class="restaurant-card">
+
+                <h3>
+                    Sweet Heaven
+                </h3>
+
+                <p>
+                    Desserts
+                </p>
+
+                <a href="restaurants?restaurantId=44">
+                    View Restaurant
+                </a>
+
+            </div>
+
+
+            <!-- TANDOORI TALES -->
+
+            <div class="restaurant-card">
+
+                <h3>
+                    Tandoori Tales
+                </h3>
+
+                <p>
+                    North Indian
+                </p>
+
+                <a href="restaurants?restaurantId=45">
+                    View Restaurant
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         WHY CHOOSE FOODIE
+    ========================== -->
+
+    <section class="why-foodie">
+
+        <h2>
+            Why Choose Foodie?
+        </h2>
+
+        <div class="why-container">
+
+            <div class="why-card">
+
+                <h3>
+                    Fast Delivery
+                </h3>
+
+                <p>
+                    Get your favourite food delivered quickly.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <h3>
+                    Best Restaurants
+                </h3>
+
+                <p>
+                    Discover popular restaurants around Bengaluru.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <h3>
+                    Easy Ordering
+                </h3>
+
+                <p>
+                    Order your favourite meals with just a few clicks.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>
+                🍴 Foodie
+            </h3>
+
+            <p>
+                Delicious food delivered to your doorstep.
+            </p>
+
+            <div class="footer-links">
+
+                <a href="home.html">
+                    Home
+                </a>
+
+                <a href="cart">
+                    Cart
+                </a>
+
+                <a href="orderHistory">
+                    Orders
+                </a>
+
+            </div>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Foodie. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         SEARCH JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        function searchRestaurants() {
+
+            const searchInput =
+                document.getElementById("searchInput").value
+                .toLowerCase()
+                .trim();
+
+            const restaurantCards =
+                document.querySelectorAll(".restaurant-card");
+
+            const searchMessage =
+                document.getElementById("searchMessage");
+
+            let found = false;
+
+
+            restaurantCards.forEach(function(card) {
+
+                const restaurantName =
+                    card.querySelector("h3")
+                    .textContent
+                    .toLowerCase();
+
+
+                if (
+                    searchInput === "" ||
+                    restaurantName.includes(searchInput)
+                ) {
+
+                    card.style.display = "block";
+
+                    found = true;
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+
+            if (searchInput !== "" && !found) {
+
+                searchMessage.textContent =
+                    "No restaurant found.";
+
+            } else {
+
+                searchMessage.textContent =
+                    "";
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🍴 Foodie
+        </div>
+
+        <div class="nav-links">
+
+            <a href="home.html">
+                Home
+            </a>
+
             <!-- Restaurants link -->
             <a href="home.html#restaurants">
                 Restaurants
