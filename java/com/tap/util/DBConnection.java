@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class DBConnection {
 
     private static final String URL =
-            "jdbc:mysql://fooddelivery-db-sanjanah2004-caec.h.aivencloud.com:21159/food_devivery_application?sslMode=REQUIRED";
+        "jdbc:mysql://mysql-15fb9c49-sanjanah2004-caec.f.aivencloud.com:21159/food_devivery_application?sslMode=REQUIRED";
 
     private static final String USERNAME = "avnadmin";
 
